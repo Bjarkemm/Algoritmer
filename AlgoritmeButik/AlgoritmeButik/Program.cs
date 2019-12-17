@@ -17,6 +17,22 @@ namespace AlgoritmeButik
                 Console.WriteLine(i);
             }
 
+            gList.Remove(6);
+
+            foreach(int i in gList)
+            {
+                Console.WriteLine(i);
+            }
+
+            List<int> listOfInt = new List<int>();
+
+            gList.Add(6);
+
+            foreach(int i in gList)
+            {
+                Console.WriteLine(i);
+            }
+
             Console.ReadKey();
         }
     }

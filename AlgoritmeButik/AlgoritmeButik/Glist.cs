@@ -12,6 +12,11 @@ namespace AlgoritmeButik
         private T[] allTheTease;
         private int count;
 
+        public int Count
+        {
+            get { return count; }
+        }
+
         public Glist()
         {
             count = 0;
@@ -29,6 +34,11 @@ namespace AlgoritmeButik
             count++;
         }
 
+        public void Remove(T item)
+        {
+            RemoveFromArray(item);
+        }
+
         public IEnumerator<T> GetEnumerator()
         {
             for (int i = 0; i < count; i++)
@@ -44,6 +54,35 @@ namespace AlgoritmeButik
             {
                 temp[i] = allTheTease[i];
             }
+            allTheTease = temp;
+        }
+
+        private void RemoveFromArray(T item)
+        {
+            T[] temp = new T[allTheTease.Length];
+
+            bool passedValue = false;
+
+            for (int i = 0; i < allTheTease.Length; i++)
+            {
+                if (!allTheTease[i].Equals(item) && !passedValue)
+                {
+                    temp[i] = allTheTease[i];
+                }
+                else if (passedValue)
+                {
+                    int toAdd = i;
+                    toAdd--;
+                    temp[toAdd] = allTheTease[i];
+                }
+                if(allTheTease[i].Equals(item))
+                {
+                    passedValue = true;
+                    
+                }
+
+            }
+            count--;
             allTheTease = temp;
         }
 
