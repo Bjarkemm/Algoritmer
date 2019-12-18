@@ -43,10 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Gdictionary.cs" />
-    <Compile Include="Glist.cs" />
-    <Compile Include="Gqueue.cs" />
-    <Compile Include="Gstack.cs" />
+    <Compile Include="Lists\Gdictionary.cs" />
+    <Compile Include="Lists\Glist.cs" />
+    <Compile Include="Lists\Gqueue.cs" />
+    <Compile Include="Lists\Gstack.cs" />
+    <Compile Include="Map\Edge.cs" />
+    <Compile Include="Map\Graph.cs" />
+    <Compile Include="Map\Node.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
