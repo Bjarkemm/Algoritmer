@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gdictionary.cs" />
     <Compile Include="Glist.cs" />
     <Compile Include="Gqueue.cs" />
     <Compile Include="Gstack.cs" />
