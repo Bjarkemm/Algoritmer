@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AlgoritmeButik
 {
-    class Glist<T> : IEnumerable<T>
+    class Gqueue<T> : IEnumerable<T>
     {
         private T[] allTheTease;
         private int count;
@@ -16,35 +16,22 @@ namespace AlgoritmeButik
         {
             get { return count; }
         }
-        
-        public Glist()
+
+        public Gqueue()
         {
             count = 0;
             allTheTease = new T[4];
         }
 
-        public void Add(T item)
+        public void Enqueue(T item)
         {
-            while(allTheTease.Length <= count)
+            while (allTheTease.Length <= count)
             {
                 BiggerBetterStrongFaster();
             }
 
             allTheTease[count] = item;
             count++;
-        }
-
-        public void Remove(T item)
-        {
-            RemoveFromArray(item);
-        }
-
-        public IEnumerator<T> GetEnumerator()
-        {
-            for (int i = 0; i < count; i++)
-            {
-                yield return allTheTease[i];
-            }
         }
 
         private void BiggerBetterStrongFaster()
@@ -57,33 +44,45 @@ namespace AlgoritmeButik
             allTheTease = temp;
         }
 
-        private void RemoveFromArray(T item)
+        public void Clear()
+        {
+            allTheTease = new T[4];
+        }
+
+        public T Dequeue()
         {
             T[] temp = new T[allTheTease.Length];
 
-            bool passedValue = false;
+            bool isFirst = true;
+
+            T item = default(T);
 
             for (int i = 0; i < allTheTease.Length; i++)
             {
-                if (!allTheTease[i].Equals(item) && !passedValue)
+                if (isFirst)
                 {
-                    temp[i] = allTheTease[i];
+                    item = allTheTease[i];
+                    isFirst = false;
                 }
-                else if (passedValue)
+                else
                 {
                     int toAdd = i;
                     toAdd--;
                     temp[toAdd] = allTheTease[i];
                 }
-                if(allTheTease[i].Equals(item))
-                {
-                    passedValue = true;
-                    
-                }
 
             }
             count--;
             allTheTease = temp;
+            return item;
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            for (int i = 0; i < count; i++)
+            {
+                yield return allTheTease[i];
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
