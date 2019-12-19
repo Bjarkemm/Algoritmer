@@ -19,7 +19,9 @@ namespace AlgoritmeButik
 
         public BuildStore()
         {
-
+            BuildItems();
+            BuildNodeMap();
+            AddEdge();
         }
 
         public void BuildItems()
@@ -36,10 +38,15 @@ namespace AlgoritmeButik
             items.Add("Receipt");
         }
 
-        public void BuildMap()
+        public void BuildNodeMap()
         {
             mapGraph.AddNode(new Node<string>(FindInItems("Basket")));
-            
+            mapGraph.AddNode(new Node<string>(FindInItems("Fruit")));
+        }
+
+        public void AddEdge()
+        {
+            mapGraph.AddEdgeToNode(mapGraph.ListOfNodes["Basket"], mapGraph.ListOfNodes["Fruit"], false);
         }
 
         public string FindInItems(string what)
