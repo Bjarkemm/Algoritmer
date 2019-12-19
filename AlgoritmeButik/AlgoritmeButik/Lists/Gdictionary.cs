@@ -43,6 +43,36 @@ namespace AlgoritmeButik
             }
         }
 
+        public Tkey this[Tvalue value2]
+        {
+            get
+            {
+                for (int i = 0; i < allTheTvalue.Length; i++)
+                {
+                    if (allTheTvalue[i].Equals(value2))
+                    {
+                        return allTheTkey[i];
+                    }
+                }
+
+                throw new Exception();
+            }
+
+            set
+            {
+                for (int i = 0; i < allTheTvalue.Length; i++)
+                {
+                    if (allTheTvalue[i].Equals(value2))
+                    {
+                        allTheTkey[i] = value;
+                        return;
+                    }
+                }
+
+                throw new Exception();
+            }
+        }
+
         public int Count
         {
             get { return count; }
