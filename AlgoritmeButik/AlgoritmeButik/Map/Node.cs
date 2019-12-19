@@ -32,9 +32,9 @@ namespace AlgoritmeButik.Map
             nodeCounter++;
         }
 
-        public void AddEdge(int otherNodeIndex)
+        public void AddEdge(int otherNodeName)
         {
-            myEdges.Add(new Edge(otherNodeIndex));
+            myEdges.Add(new Edge(otherNodeName));
         }
     }
 }

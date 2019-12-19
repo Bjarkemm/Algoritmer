@@ -52,6 +52,7 @@
     <Compile Include="Map\Node.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BuildStore.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
