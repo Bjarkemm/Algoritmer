@@ -7,7 +7,7 @@ using AlgoritmeButik.Map;
 
 namespace AlgoritmeButik
 {
-    class BuildStore
+    public class BuildStore
     {
         Glist<string> items = new Glist<string>();
         Graph<string> mapGraph = new Graph<string>();
@@ -15,6 +15,11 @@ namespace AlgoritmeButik
         public Glist<string> Items
         {
             get { return items; }
+        }
+
+        public Graph<string> GetGraph
+        {
+            get { return mapGraph; }
         }
 
         public BuildStore()

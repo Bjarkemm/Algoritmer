@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AlgoritmeButik
 {
-    class Glist<T> : IEnumerable<T>
+    public class Glist<T> : IEnumerable<T>
     {
         private T[] allTheTease;
         private int count;

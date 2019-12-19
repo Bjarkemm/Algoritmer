@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AlgoritmeButik
 {
-    class Gqueue<T> : IEnumerable<T>
+    public class Gqueue<T> : IEnumerable<T>
     {
         private T[] allTheTease;
         private int count;
