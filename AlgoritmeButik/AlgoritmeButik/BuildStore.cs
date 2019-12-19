@@ -10,7 +10,7 @@ namespace AlgoritmeButik
     class BuildStore
     {
         Glist<string> items = new Glist<string>();
-        Graph<Node<string>> mapGraph = new Graph<Node<string>>();
+        Graph<string> mapGraph = new Graph<string>();
 
         public Glist<string> Items
         {
@@ -40,13 +40,31 @@ namespace AlgoritmeButik
 
         public void BuildNodeMap()
         {
-            mapGraph.AddNode(new Node<string>(FindInItems("Basket")));
-            mapGraph.AddNode(new Node<string>(FindInItems("Fruit")));
+            mapGraph.AddNode(FindInItems("Basket"));
+            mapGraph.AddNode(FindInItems("Fruit"));
+            mapGraph.AddNode(FindInItems("Dairy"));
+            mapGraph.AddNode(FindInItems("Meat"));
+            mapGraph.AddNode(FindInItems("Colonial"));
+            mapGraph.AddNode(FindInItems("Tools"));
+            mapGraph.AddNode(FindInItems("Candy"));
+            mapGraph.AddNode(FindInItems("Electronics"));
+            mapGraph.AddNode(FindInItems("Bakery"));
+            mapGraph.AddNode(FindInItems("Receipt"));
         }
 
         public void AddEdge()
         {
-            mapGraph.AddEdgeToNode(mapGraph.ListOfNodes["Basket"], mapGraph.ListOfNodes["Fruit"], false);
+            mapGraph.AddEdgeToNode("Basket", "Fruit", false);
+            mapGraph.AddEdgeToNode("Fruit", "Bakery");
+            mapGraph.AddEdgeToNode("Basket", "Meat", false);
+            mapGraph.AddEdgeToNode("Fruit", "Meat");
+            mapGraph.AddEdgeToNode("Meat", "Dairy");
+            mapGraph.AddEdgeToNode("Dairy", "Colonial");
+            mapGraph.AddEdgeToNode("Meat", "Electronics");
+            mapGraph.AddEdgeToNode("Meat", "Candy");
+            mapGraph.AddEdgeToNode("Electronics", "Candy");
+            mapGraph.AddEdgeToNode("Electronics", "Tools");
+            mapGraph.AddEdgeToNode("Electronics", "Receipt", false);
         }
 
         public string FindInItems(string what)

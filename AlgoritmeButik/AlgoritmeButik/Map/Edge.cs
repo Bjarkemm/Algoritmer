@@ -8,9 +8,9 @@ namespace AlgoritmeButik.Map
 {
     class Edge
     {
-        int nodeIndex;
+        string nodeIndex;
 
-        public Edge(int nodeIndex)
+        public Edge(string nodeIndex)
         {
             this.nodeIndex = nodeIndex;
         }

@@ -8,9 +8,9 @@ namespace AlgoritmeButik.Map
 {
     class Graph<T>
     {
-        Gdictionary<int, Node<T>> listOfNodes = new Gdictionary<int, Node<T>>();
+        Gdictionary<string, Node<T>> listOfNodes = new Gdictionary<string, Node<T>>();
 
-        public Gdictionary<int, Node<T>> ListOfNodes
+        public Gdictionary<string, Node<T>> ListOfNodes
         {
             get { return listOfNodes; }
         }
@@ -20,14 +20,13 @@ namespace AlgoritmeButik.Map
 
         }
 
-        public int AddNode(T value)
+        public void AddNode(T value)
         {
             Node<T> node = new Node<T>(value);
-            listOfNodes.Add(node.GetNodeIndex, node);
-            return node.GetNodeIndex;
+            listOfNodes.Add(Convert.ToString(value), node);
         }
 
-        public void AddEdgeToNode(int startNode, int endNode, bool bidirectional = true)
+        public void AddEdgeToNode(string startNode, string endNode, bool bidirectional = true)
         {
             listOfNodes[startNode].AddEdge(endNode);
             if (bidirectional)

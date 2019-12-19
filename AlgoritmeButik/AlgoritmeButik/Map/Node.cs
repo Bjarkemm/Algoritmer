@@ -10,15 +10,7 @@ namespace AlgoritmeButik.Map
     {
         T nodeValue;
 
-        private static int nodeCounter = 0;
-        readonly int nodeIndex;
-
         Glist<Edge> myEdges = new Glist<Edge>();
-
-        public int GetNodeIndex
-        {
-            get { return this.nodeIndex; }
-        }
 
         public Glist<Edge> GetEdges
         {
@@ -28,13 +20,11 @@ namespace AlgoritmeButik.Map
         public Node(T nodeValue)
         {
             this.nodeValue = nodeValue;
-            nodeIndex = nodeCounter;
-            nodeCounter++;
         }
 
-        public void AddEdge(int otherNodeName)
+        public void AddEdge(string name)
         {
-            myEdges.Add(new Edge(otherNodeName));
+            myEdges.Add(new Edge(name));
         }
     }
 }
