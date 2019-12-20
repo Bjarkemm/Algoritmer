@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlgoritmeButik.Map
 {
-    class Edge
+    public class Edge
     {
         string nodeIndex;
 

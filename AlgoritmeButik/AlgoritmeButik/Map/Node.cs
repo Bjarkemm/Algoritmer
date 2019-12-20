@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace AlgoritmeButik.Map
 {
-    class Node<T>
+    public class Node<T>
     {
         T nodeValue;
+
+        private int gPoint;
 
         Glist<Edge> myEdges = new Glist<Edge>();
 
@@ -17,9 +19,16 @@ namespace AlgoritmeButik.Map
             get { return this.myEdges; }
         }
 
+        public int GetGPoint
+        {
+            get { return gPoint; }
+        }
+
         public Node(T nodeValue)
         {
             this.nodeValue = nodeValue;
+            this.gPoint = 10;
+
         }
 
         public void AddEdge(string name)

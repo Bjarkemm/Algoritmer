@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlgoritmeButik.Map
 {
-    class Graph<T>
+    public class Graph<T>
     {
         Gdictionary<string, Node<T>> listOfNodes = new Gdictionary<string, Node<T>>();
 

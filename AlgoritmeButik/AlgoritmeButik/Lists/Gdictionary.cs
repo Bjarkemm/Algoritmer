@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AlgoritmeButik
 {
-    class Gdictionary<Tkey, Tvalue>
+    public class Gdictionary<Tkey, Tvalue>
     {
         private Tvalue[] allTheTvalue;
         private Tkey[] allTheTkey;

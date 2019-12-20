@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AStar.cs" />
+    <Compile Include="Customer.cs" />
     <Compile Include="Lists\Gdictionary.cs" />
     <Compile Include="Lists\Glist.cs" />
     <Compile Include="Lists\Gqueue.cs" />
